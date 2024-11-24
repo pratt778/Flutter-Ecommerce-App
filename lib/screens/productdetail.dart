@@ -48,7 +48,8 @@ class Productdetail extends StatelessWidget {
                     cart.add({
                       "name": productName,
                       "price": productPrice,
-                      "image": productImage
+                      "image": productImage,
+                      "quantity": 1
                     });
                     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                         content: Text("$productName is added to the cart")));
