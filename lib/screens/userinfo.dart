@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../models/cart.dart';
 
 class UserInfoPage extends StatefulWidget {
-  UserInfoPage({super.key});
+  const UserInfoPage({super.key});
 
   @override
   State<UserInfoPage> createState() => _UserInfoPageState();

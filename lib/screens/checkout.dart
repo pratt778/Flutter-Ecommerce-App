@@ -1,6 +1,6 @@
 import 'package:ecommerce_app_flutter/screens/home.dart';
 import 'package:flutter/material.dart';
-
+import "package:ecommerce_app_flutter/screens/payment.dart";
 class CheckoutPage extends StatelessWidget {
   final String fullname;
   final String address;
@@ -78,6 +78,9 @@ class CheckoutPage extends StatelessWidget {
               },
             )),
             Text("Total price for all the product:${totalprice.toString()}"),
+            ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>MyPayment()));
+            }, child: Text("Pay with khalti")),
             ElevatedButton(
               onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
