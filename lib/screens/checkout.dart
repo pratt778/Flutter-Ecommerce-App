@@ -1,6 +1,7 @@
 import 'package:ecommerce_app_flutter/screens/home.dart';
 import 'package:flutter/material.dart';
 import "package:ecommerce_app_flutter/screens/payment.dart";
+
 class CheckoutPage extends StatelessWidget {
   final String fullname;
   final String address;
@@ -78,21 +79,16 @@ class CheckoutPage extends StatelessWidget {
               },
             )),
             Text("Total price for all the product:${totalprice.toString()}"),
-            ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>MyPayment()));
-            }, child: Text("Pay with khalti")),
             ElevatedButton(
-              onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text("Order has been succesfully placed")));
-                Future.delayed(Duration(seconds: 2), () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Homepage()));
-                });
-              },
-              child: Text("Confirm your Order"),
-              style: ButtonStyle(),
-            )
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MyPayment(
+                                totalprice: totalprice,
+                              )));
+                },
+                child: Text("Complete Your Payment"))
           ],
         ),
       ),
